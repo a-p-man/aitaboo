@@ -1,3 +1,7 @@
+
+// Import the API base URL
+import API_BASE_URL from './config.js';
+
 document.addEventListener('DOMContentLoaded', function() {
     fetchTargetWord();
     document.getElementById('input-box').value = ''; // Clear the input box
@@ -12,7 +16,7 @@ document.addEventListener('DOMContentLoaded', function() {
 });
 
 function fetchTargetWord() {
-    fetch('https://localhost:3000/api/word', {
+    fetch(`${API_BASE_URL}/api/word`, {
         method: 'GET',
         credentials: 'include'
     })
@@ -24,7 +28,7 @@ function fetchTargetWord() {
 }
 
 function sendDescription(description) {
-    fetch('https://localhost:3000/api/guess', {
+    fetch(`${API_BASE_URL}/api/guess`, {
         method: 'POST',
         credentials: 'include',
         headers: {
