@@ -12,7 +12,7 @@ document.addEventListener('DOMContentLoaded', function() {
 });
 
 function fetchTargetWord() {
-    fetch('http://localhost:3000/api/word', {
+    fetch('https://localhost:3000/api/word', {
         method: 'GET',
         credentials: 'include'
     })
@@ -24,7 +24,7 @@ function fetchTargetWord() {
 }
 
 function sendDescription(description) {
-    fetch('http://localhost:3000/api/guess', {
+    fetch('https://localhost:3000/api/guess', {
         method: 'POST',
         credentials: 'include',
         headers: {
