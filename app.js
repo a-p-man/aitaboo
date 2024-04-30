@@ -13,6 +13,7 @@ document.addEventListener('DOMContentLoaded', function() {
             sendDescription(description);
         }
     };
+    document.getElementById('skip-button').addEventListener('click', skipWord);
 });
 
 function fetchTargetWord() {
