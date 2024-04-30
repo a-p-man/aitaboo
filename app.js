@@ -76,7 +76,7 @@ function displayError(errorMessage) {
 function skipWord() {
 
     const messageContainer = document.getElementById('message-container');
-    //messageContainer.textContent = ''; 
+    messageContainer.textContent = ''; 
 
     fetchTargetWord(); // Fetch a new target word
     document.getElementById('input-box').value = ''; // Clear the input box
