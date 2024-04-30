@@ -1,0 +1,70 @@
+body {
+    background-color: #15202B;
+    color: #ffffff;
+    font-family: Arial, sans-serif;
+}
+.input-group {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.input-box {
+    background-color: #273340;
+    border: none;
+    color: #ffffff;
+    padding: 10px 15px;
+    width: 90%;  
+    margin-right: 10px; 
+}
+.skip-button {
+    background-color: #007BFF;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+.skip-button:hover {
+    background-color: #0056b3;
+}
+.message-wrong {
+    color: #F91880;
+    font-size: 14px;
+    padding: 5px 0;
+}
+.message-correct {
+    color: #00BA7C;
+    font-size: 14px;
+    padding: 5px 0;
+}
+.word-list {
+    list-style: none;
+    padding: 0;
+}
+.word-item {
+    background-color: #333333;
+    border: 1px solid #444;
+    padding: 10px 15px;
+    margin-bottom: 5px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.word-item.correct {
+    background-color: #004d40;
+}
+.footer {
+    color: #999;
+    font-size: 12px;
+    text-align: center;
+    margin-top: 20px;
+}
+.header {
+    text-align: center;
+    margin-bottom: 10px;
+}
+.target-word {
+    text-align: center;
+    font-size: 16px;
+    margin-bottom: 10px;
+}
