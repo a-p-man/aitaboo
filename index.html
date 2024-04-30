@@ -61,8 +61,10 @@
 <body>
     <div class="container mx-auto px-4 py-5">
         <div class="header text-lg mb-2">AI TABOO</div>
-        <div class="target-word">Target word: garage</div>
-        <input type="text" class="input-box" placeholder="type a phrase that does not include the target word">
+        <div class="target-word" id="target-word">Target word: <span id="word-display">garage</span></div>
+        <input type="text" class="input-box" id="input-box" placeholder="Type a phrase that does not include the target word" onkeypress="handleKeyPress(event)">
+        <div id="message-container"></div>
     </div>
+    <script src="app.js"></script> <!-- Link to your JavaScript file -->
 </body>
 </html>
