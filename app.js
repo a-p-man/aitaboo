@@ -31,28 +31,43 @@ function sendDescription(description) {
         },
         body: JSON.stringify({ description: description })
     })
-    .then(response => response.json())
+    .then(response => {
+        if (!response.ok) {
+            throw response; // Throw an error if the response is not 2xx
+        }
+        return response.json();
+    })
     .then(data => {
-        displayResponse(data);
         if (data.success) {
-            fetchTargetWord(); // Fetch a new target word on success
+            displaySuccess(data.guess);
+        } else {
+            displayError(`Did you mean "${data.guess}"?`);
         }
     })
-    .catch(error => console.error('Error submitting description:', error));
+    .catch(error => {
+        error.json().then(err => {
+            displayError(err.error); // Display the error message from the backend
+        }).catch(genericError => {
+            displayError("An unknown error occurred."); // Fallback error message
+        });
+    });
 }
 
-function displayResponse(data) {
+
+function displaySuccess(message) {
     const messageContainer = document.getElementById('message-container');
-    messageContainer.innerHTML = ''; // Clear previous messages
-    let messageElement = document.createElement('div');
+    messageContainer.textContent = 'Success!';
+    messageContainer.className = 'message-correct';
 
-    if (data.success) {
-        messageElement.textContent = 'Success!';
-        messageElement.className = 'message-correct';
-    } else {
-        messageElement.textContent = `Did you mean "${data.guess}"?`;
-        messageElement.className = 'message-wrong';
-    }
+    fetchTargetWord(); // Fetch a new target word after a successful guess
+}
 
-    messageContainer.appendChild(messageElement);
+function displayError(errorMessage) {
+    const errorContainer = document.getElementById('error-container');
+    errorContainer.textContent = errorMessage;
+}
+
+function skipWord() {
+    fetchTargetWord(); // Fetch a new target word
+    document.getElementById('input-box').value = ''; // Clear the input box
 }

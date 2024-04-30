@@ -8,12 +8,29 @@
             color: #ffffff;
             font-family: Arial, sans-serif;
         }
+        .input-group {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
         .input-box {
             background-color: #273340;
             border: none;
             color: #ffffff;
             padding: 10px 15px;
-            width: 100%;
+            width: 90%;  
+            margin-right: 10px; 
+        }
+        .skip-button {
+            background-color: #007BFF;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        .skip-button:hover {
+            background-color: #0056b3;
         }
         .message-wrong {
             color: #F91880;
@@ -62,8 +79,12 @@
     <div class="container mx-auto px-4 py-5">
         <div class="header text-lg mb-2">AI TABOO</div>
         <div class="target-word" id="target-word">Target word: <span id="word-display">garage</span></div>
-        <input type="text" class="input-box" id="input-box" placeholder="Type a phrase that does not include the target word" onkeypress="handleKeyPress(event)">
-        <div id="message-container"></div>
+        <div class="input-group">
+            <input type="text" class="input-box" id="input-box" placeholder="Type a phrase that does not include the target word" onkeypress="handleKeyPress(event)">
+            <button onclick="skipWord()" class="skip-button">Skip</button>
+         </div>   
+        <div id="message-container" class="message-correct"></div>
+        <div id="error-container" class="message-wrong"></div>
     </div>
     <script src="app.js"></script> <!-- Link to your JavaScript file -->
 </body>
