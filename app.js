@@ -57,11 +57,9 @@ function sendDescription(description) {
 
 function displaySuccess(score) {
     const messageContainer = document.getElementById('message-container');
-    const errorContainer = document.getElementById('error-container');
 
     messageContainer.textContent = 'Success!';
     messageContainer.className = 'message-correct';
-    errorContainer.textContent = ''; // Clear any existing error messages
     document.getElementById('input-box').value = ''; // Clear the input box
 
     updateScoreDisplay(score);
@@ -70,20 +68,15 @@ function displaySuccess(score) {
 
 function displayError(errorMessage) {
     const messageContainer = document.getElementById('message-container');
-    const errorContainer = document.getElementById('error-container');
 
-    errorContainer.textContent = errorMessage;
-    errorContainer.className = 'message-wrong';
-    messageContainer.textContent = ''; // Clear any existing success messages
+    messageContainer.textContent = errorMessage;
+    messageContainer.className = 'message-wrong';
 }
 
 function skipWord() {
 
     const messageContainer = document.getElementById('message-container');
-    const errorContainer = document.getElementById('error-container');
-    
-    messageContainer.textContent = ''; 
-    errorContainer.textContent = ''; 
+    //messageContainer.textContent = ''; 
 
     fetchTargetWord(); // Fetch a new target word
     document.getElementById('input-box').value = ''; // Clear the input box
