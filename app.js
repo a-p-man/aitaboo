@@ -11,17 +11,21 @@ document.addEventListener('DOMContentLoaded', function() {
 });
 
 function fetchTargetWord() {
-    fetch('http://localhost:3000/api/word')
-        .then(response => response.json())
-        .then(data => {
-            document.getElementById('word-display').textContent = data.word;
-        })
-        .catch(error => console.error('Error fetching target word:', error));
+    fetch('http://localhost:3000/api/word', {
+        method: 'GET',
+        credentials: 'include'
+    })
+    .then(response => response.json())
+    .then(data => {
+        document.getElementById('word-display').textContent = data.word;
+    })
+    .catch(error => console.error('Error fetching target word:', error));
 }
 
 function sendDescription(description) {
     fetch('http://localhost:3000/api/guess', {
         method: 'POST',
+        credentials: 'include',
         headers: {
             'Content-Type': 'application/json',
         },
