@@ -1,5 +1,6 @@
 document.addEventListener('DOMContentLoaded', function() {
     fetchTargetWord();
+    document.getElementById('input-box').value = ''; // Clear the input box
 
     window.handleKeyPress = function(event) {
         if (event.key === 'Enter') {
@@ -56,18 +57,33 @@ function sendDescription(description) {
 
 function displaySuccess(message) {
     const messageContainer = document.getElementById('message-container');
+    const errorContainer = document.getElementById('error-container');
+
     messageContainer.textContent = 'Success!';
     messageContainer.className = 'message-correct';
+    errorContainer.textContent = ''; // Clear any existing error messages
+    document.getElementById('input-box').value = ''; // Clear the input box
 
     fetchTargetWord(); // Fetch a new target word after a successful guess
 }
 
 function displayError(errorMessage) {
+    const messageContainer = document.getElementById('message-container');
     const errorContainer = document.getElementById('error-container');
+
     errorContainer.textContent = errorMessage;
+    errorContainer.className = 'message-wrong';
+    messageContainer.textContent = ''; // Clear any existing success messages
 }
 
 function skipWord() {
+
+    const messageContainer = document.getElementById('message-container');
+    const errorContainer = document.getElementById('error-container');
+    
+    messageContainer.textContent = ''; 
+    errorContainer.textContent = ''; 
+
     fetchTargetWord(); // Fetch a new target word
     document.getElementById('input-box').value = ''; // Clear the input box
 }
