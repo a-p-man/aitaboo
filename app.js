@@ -40,7 +40,7 @@ function sendDescription(description) {
     })
     .then(data => {
         if (data.success) {
-            displaySuccess(data.guess);
+            displaySuccess(data.score);
         } else {
             displayError(`Did you mean "${data.guess}"?`);
         }
@@ -55,7 +55,7 @@ function sendDescription(description) {
 }
 
 
-function displaySuccess(message) {
+function displaySuccess(score) {
     const messageContainer = document.getElementById('message-container');
     const errorContainer = document.getElementById('error-container');
 
@@ -64,6 +64,7 @@ function displaySuccess(message) {
     errorContainer.textContent = ''; // Clear any existing error messages
     document.getElementById('input-box').value = ''; // Clear the input box
 
+    updateScoreDisplay(score);
     fetchTargetWord(); // Fetch a new target word after a successful guess
 }
 
@@ -86,4 +87,9 @@ function skipWord() {
 
     fetchTargetWord(); // Fetch a new target word
     document.getElementById('input-box').value = ''; // Clear the input box
+}
+
+function updateScoreDisplay(score) {
+    const scoreDisplay = document.getElementById('score-display');
+    scoreDisplay.textContent = 'Score: ' + score;
 }

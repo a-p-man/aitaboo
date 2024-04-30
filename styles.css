@@ -59,9 +59,16 @@ body {
     text-align: center;
     margin-top: 20px;
 }
-.header {
+.header h1 {
     text-align: center;
     margin-bottom: 10px;
+    font-size: 24px;
+}
+.score {
+    font-size: 18px;
+    position: absolute;
+    top: 25px;
+    left: 60px;
 }
 .target-word {
     text-align: center;
