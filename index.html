@@ -8,13 +8,15 @@
     <div class="container mx-auto px-4 py-5">
         <div class="header text-lg mb-2">
             <h1 style="font-size: 24px;">AI TABOO</h1> 
-            <div class="score" id="score-display">Score: 0</div>
         </div>
-        <div class="target-word" id="target-word">Target word: <span id="word-display">garage</span></div>
+        <div class="info-bar flex justify-between items-center mb-2">
+            <div class="score" id="score-display">Score: 0</div>
+            <div class="target-word" id="target-word">Target word: <span id="word-display">garage</span></div>
+            <button class="skip-button" id="skip-button">Skip</button>
+        </div>
         <div class="input-group">
             <input type="text" class="input-box" id="input-box" placeholder="Type a phrase that does not include the target word" onkeypress="handleKeyPress(event)">
-            <button class="skip-button" id="skip-button">Skip</button>
-         </div>   
+        </div>   
         <div id="message-container"></div>
     </div>
     <script type="module" src="app.js"></script> 
