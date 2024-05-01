@@ -3,6 +3,3 @@ node_modules/
 # SSL cert
 server.key
 server.cert
-
-# server code
-server.js
