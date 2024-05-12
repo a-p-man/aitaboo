@@ -80,8 +80,17 @@ function displayError(errorMessage) {
 
 function skipWord() {
 
-    const messageContainer = document.getElementById('message-container');
-    messageContainer.textContent = ''; 
+    fetch(`${API_BASE_URL}/api/phrase`, {
+        method: 'GET',
+        credentials: 'include'
+    })
+    .then(response => response.json())
+    .then(data => {
+        const messageContainer = document.getElementById('message-container');
+        messageContainer.textContent = 'Answer: ' + data.phrase;
+        messageContainer.className = 'message-wrong';
+    })
+    .catch(error => console.error('Error fetching phrase: ', error));
 
     fetchTargetWord(); // Fetch a new target word
     document.getElementById('input-box').value = ''; // Clear the input box
