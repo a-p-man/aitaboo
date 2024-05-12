@@ -1,7 +1,16 @@
-body {
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html, body {
     background-color: #15202B;
     color: #ffffff;
-    font-family: Arial, sans-serif;
+    font-family: Nunito, sans-serif;
+    width: 100%;
+    height: 100%;
+    overflow-x: hidden;
 }
 .info-bar {
     display: flex;
@@ -12,28 +21,35 @@ body {
 
 .score {
     flex: 1; /* Takes up 1/3 of the space */
-    text-align: left; /* Aligns text to the left */
-    font-size: 16px;
+    text-align: center; /* Aligns text to the left */
+    font-size: 18px;
 }
 
 .target-word {
     flex: 1; /* Takes up 1/3 of the space */
     text-align: center; /* Centers text */
-    font-size: 16px;
+    font-size: 18px;
+    margin-botton: 10px;
 }
 
 .skip-button {
     background-color: #007BFF;
     color: white;
     flex: 1; /* Takes up 1/3 of the space */
-    text-align: right; /* Aligns text to the right */
-    padding: 8px 16px;
+    text-align: center; /* Aligns text to the right */
+    padding: 8px;
+    margin-top: 10px;
     border: none;
     border-radius: 5px;
     cursor: pointer;
 }
 .skip-button:hover {
     background-color: #0056b3;
+}
+.button-container {
+    display: flex;
+    justify-content: center; /* Centers children horizontally */
+    align-items: center; /* Centers children vertically, optional */
 }
 .input-group {
     display: flex;
@@ -49,6 +65,17 @@ body {
     height: 100px;
     box-sizing: border-box;
     resize: none; 
+    white-space: pre-wrap;
+    overflow-wrap: break-word;
+    vertical-align: top;
+    margin-top: 10px;
+}
+.message-info {
+    color: #ffffff;
+    font-size: 16px;
+    padding: 10px;
+    margin-top: 5px;
+    border: 1px solid transparent;
 }
 .message-correct {
     color: #00BA7C;
@@ -89,7 +116,11 @@ body {
 .header h1 {
     text-align: center;
     margin-bottom: 10px;
-    font-size: 24px;
+    font-size: 28px;
+    font-weight: 600;
+}
+input, button, textarea {
+    font-size: 16px; /* Prevents zooming on iOS devices */
 }
 
 @media (max-width: 768px) {
