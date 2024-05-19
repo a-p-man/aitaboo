@@ -43,7 +43,7 @@ function updateDifficulty(difficulty) {
     })
     .then(response => response.json())
     .then(data => {
-        console.log('Difficulty set to:', data.difficulty)
+        //console.log('Difficulty set to:', data.difficulty)
         document.getElementById('word-display').textContent = data.word;
         const excludedDisplay = data.excluded ? data.excluded.split('|').join(', ') : '(None)';
         document.getElementById('excluded-display').textContent = excludedDisplay;
@@ -124,8 +124,10 @@ function skipWord() {
     .then(response => response.json())
     .then(data => {
         const messageContainer = document.getElementById('message-container');
-        const prevPhraseClean = data.prevphrase.replace(/^"/, '').replace(/"$/, '').toLowerCase();
-        messageContainer.textContent = data.prevword + ': ' + prevPhraseClean;
+        const prevWord = data.prevword ? data.prevword : '';
+        const prevPhrase = data.prevphrase ? data.prevphrase : '';
+        const prevPhraseClean = prevPhrase.replace(/^"/, '').replace(/"$/, '').toLowerCase();
+        messageContainer.textContent = prevWord + ': ' + prevPhraseClean;
         messageContainer.className = 'message-wrong';
         document.getElementById('word-display').textContent = data.word;
         const excludedDisplay = data.excluded ? data.excluded.split('|').join(', ') : '(None)';
