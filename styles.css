@@ -129,7 +129,6 @@ input, button, textarea {
     background-color: transparent; /* Matches the background of the page */
     border: 2px solid #007BFF; /* Blue border */
     border-radius: 5px;
-    padding: 8px;
 }
 
 .difficulty-button {
