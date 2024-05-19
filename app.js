@@ -89,7 +89,7 @@ function skipWord() {
     .then(response => response.json())
     .then(data => {
         const messageContainer = document.getElementById('message-container');
-        messageContainer.textContent = 'Answer: ' + data.phrase;
+        messageContainer.textContent = data.word + ': ' + data.phrase;
         messageContainer.className = 'message-wrong';
     })
     .catch(error => console.error('Error fetching phrase: ', error));
