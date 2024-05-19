@@ -14,6 +14,9 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     };
     document.getElementById('skip-button').addEventListener('click', skipWord);
+    
+    const defaultDifficulty = 'normal'; // Set the default difficulty
+    document.getElementById(defaultDifficulty).classList.add('selected');
 });
 
 document.querySelectorAll('.difficulty-button').forEach(button => {
