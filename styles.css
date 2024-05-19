@@ -113,8 +113,8 @@ html, body {
 .header h1 {
     text-align: center;
     margin-bottom: 10px;
-    font-size: 28px;
-    font-weight: 600;
+    font-size: 24px;
+    font-weight: 800;
 }
 input, button, textarea {
     font-size: 16px; /* Prevents zooming on iOS devices */
