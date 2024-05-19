@@ -124,8 +124,8 @@ function skipWord() {
     .then(response => response.json())
     .then(data => {
         const messageContainer = document.getElementById('message-container');
-        const prevWord = data.prevword ? data.prevword : '';
-        const prevPhrase = data.prevphrase ? data.prevphrase : '';
+        const prevWord = data.prevWord ? data.prevWord : '';
+        const prevPhrase = data.prevPhrase ? data.prevPhrase : '';
         const prevPhraseClean = prevPhrase.replace(/^"/, '').replace(/"$/, '').toLowerCase();
         messageContainer.textContent = prevWord + ': ' + prevPhraseClean;
         messageContainer.className = 'message-wrong';
