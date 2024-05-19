@@ -120,37 +120,6 @@ input, button, textarea {
     font-size: 16px; /* Prevents zooming on iOS devices */
 }
 
-.difficulty-selector-container {
-    display: flex;
-    justify-content: center;
-    background-color: transparent;
-    border: 2px solid #007BFF; /* Blue border */
-    border-radius: 5px; /* Adjust to match skip button, assuming Tailwind's 'rounded-md' */
-    padding: 0; /* Remove padding to eliminate gaps */
-    align-items: center; /* Align items vertically */
-    height: 40px; /* Match the height of the skip button */
-}
-
-/* Adjust button styles to fill the container more naturally */
-.difficulty-button {
-    margin: 0; /* Remove margin to eliminate gaps */
-    transition: background-color 0.3s;
-    border: none;
-    cursor: pointer;
-    background-color: transparent;
-    color: #007BFF;
-    padding: 8px 16px;
-    border-radius: 5px; /* Ensure bubble matches the container radius */
-    flex-grow: 1; /* Make buttons expand to fill the container */
-    text-align: center; /* Center text within each button */
-}
-
-/* Selected state to fill the button with a blue background */
-.difficulty-button.selected {
-    background-color: #007BFF;
-    color: white;
-}
-
 @media (max-width: 768px) {
     .info-bar {
         flex-direction: column; /* Stacks the children vertically */

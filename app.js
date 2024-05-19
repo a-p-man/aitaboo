@@ -19,15 +19,13 @@ document.addEventListener('DOMContentLoaded', function() {
 document.querySelectorAll('.difficulty-button').forEach(button => {
     button.addEventListener('click', function() {
         document.querySelectorAll('.difficulty-button').forEach(btn => {
-            btn.classList.remove('selected');
-            btn.classList.add('bg-transparent');
             btn.classList.remove('bg-blue-500');
-            btn.classList.remove('text-white');
+            btn.classList.add('bg-transparent');
+            btn.style.color = 'white'; // Ensure non-selected buttons have white text
         });
-        this.classList.add('selected');
         this.classList.remove('bg-transparent');
         this.classList.add('bg-blue-500');
-        this.classList.add('text-white');
+        this.style.color = 'white'; // Ensure selected button text is white
         updateDifficulty(this.id);
     });
 });
