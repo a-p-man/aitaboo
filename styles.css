@@ -132,7 +132,6 @@ input, button, textarea {
 }
 
 .difficulty-button {
-    margin: 0 10px;
     transition: background-color 0.3s;
     border: none; /* Removes any default browser styling */
 }
