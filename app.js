@@ -32,6 +32,19 @@ document.querySelectorAll('.difficulty-button').forEach(button => {
     });
 });
 
+function updateDifficulty(difficulty) {
+    fetch('/api/set-difficulty', {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json'
+        },
+        body: JSON.stringify({ difficulty: difficulty })
+    })
+    .then(response => response.json())
+    .then(data => console.log('Difficulty set to:', data.difficulty))
+    .catch(error => console.error('Error setting difficulty:', error));
+}
+
 function fetchTargetWord() {
     fetch(`${API_BASE_URL}/api/word`, {
         method: 'GET',
