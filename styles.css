@@ -123,23 +123,23 @@ input, button, textarea {
     font-size: 16px; /* Prevents zooming on iOS devices */
 }
 
-.difficulty-button {
-    margin: 0 5px;
-    border: none;
-    transition: background-color 0.3s;
-}
-
-.difficulty-button:hover {
-    background-color: #4299e1; /* Light blue for hover, adjust as needed */
-}
-
 .difficulty-selector-container {
-    text-align: center;
+    display: flex;
+    justify-content: center; /* Centers the buttons within the container */
+    background-color: transparent; /* Matches the background of the page */
+    border: 2px solid #007BFF; /* Blue border */
+    border-radius: 5px;
+    padding: 8px;
 }
 
-/* Adjust this to integrate better with your existing color scheme */
+.difficulty-button {
+    margin: 0 10px;
+    transition: background-color 0.3s;
+    border: none; /* Removes any default browser styling */
+}
+
 .difficulty-button.selected {
-    background-color: #2b6cb0; /* Darker blue for the selected state */
+    background-color: #007BFF; /* Blue color matching the border for the selected state */
     color: white;
 }
 

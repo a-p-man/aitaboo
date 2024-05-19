@@ -20,12 +20,12 @@ document.querySelectorAll('.difficulty-button').forEach(button => {
     button.addEventListener('click', function() {
         document.querySelectorAll('.difficulty-button').forEach(btn => {
             btn.classList.remove('selected');
-            btn.classList.add('bg-gray-300');
+            btn.classList.add('bg-transparent');
             btn.classList.remove('bg-blue-500');
             btn.classList.remove('text-white');
         });
         this.classList.add('selected');
-        this.classList.remove('bg-gray-300');
+        this.classList.remove('bg-transparent');
         this.classList.add('bg-blue-500');
         this.classList.add('text-white');
         updateDifficulty(this.id);
