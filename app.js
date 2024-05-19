@@ -91,6 +91,9 @@ function skipWord() {
         const messageContainer = document.getElementById('message-container');
         messageContainer.textContent = data.prevword + ': ' + data.prevphrase;
         messageContainer.className = 'message-wrong';
+        document.getElementById('word-display').textContent = data.word;
+        const excludedDisplay = data.excluded.split('|').join(', ');
+        document.getElementById('excluded-display').textContent = excludedDisplay;
     })
     .catch(error => console.error('Error fetching phrase: ', error));
     document.getElementById('input-box').value = ''; // Clear the input box
