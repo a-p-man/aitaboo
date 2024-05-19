@@ -89,7 +89,8 @@ function skipWord() {
     .then(response => response.json())
     .then(data => {
         const messageContainer = document.getElementById('message-container');
-        messageContainer.textContent = data.prevword + ': ' + data.prevphrase;
+        const prevPhraseClean = data.prevphrase.replace(/^"/, '').replace(/"$/, '').toLowerCase();
+        messageContainer.textContent = data.prevword + ': ' + prevPhraseClean;
         messageContainer.className = 'message-wrong';
         document.getElementById('word-display').textContent = data.word;
         const excludedDisplay = data.excluded.split('|').join(', ');
