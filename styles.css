@@ -123,11 +123,14 @@ input, button, textarea {
 @media (min-width: 768px) {
     .input-box {
         width: 600px; /* Fixed width */
+        margin: auto; /* Centers the container horizontally */ 
     }
     .button-container {
         width: 600px; /* Fixed width */
+        margin: auto; /* Centers the container horizontally */ 
     }
     .difficulty-selector-container {
         width: 600px;
+        margin: auto; /* Centers the container horizontally */ 
     }
 }
