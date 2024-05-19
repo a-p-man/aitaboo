@@ -82,19 +82,17 @@ function displayError(errorMessage) {
 
 function skipWord() {
 
-    fetch(`${API_BASE_URL}/api/phrase`, {
+    fetch(`${API_BASE_URL}/api/word`, {
         method: 'GET',
         credentials: 'include'
     })
     .then(response => response.json())
     .then(data => {
         const messageContainer = document.getElementById('message-container');
-        messageContainer.textContent = data.word + ': ' + data.phrase;
+        messageContainer.textContent = data.prevword + ': ' + data.prevphrase;
         messageContainer.className = 'message-wrong';
     })
     .catch(error => console.error('Error fetching phrase: ', error));
-
-    fetchTargetWord(); // Fetch a new target word
     document.getElementById('input-box').value = ''; // Clear the input box
 }
 
