@@ -42,7 +42,12 @@ function updateDifficulty(difficulty) {
         body: JSON.stringify({ difficulty: difficulty })
     })
     .then(response => response.json())
-    .then(data => console.log('Difficulty set to:', data.difficulty))
+    .then(data => {
+        console.log('Difficulty set to:', data.difficulty)
+        document.getElementById('word-display').textContent = data.word;
+        const excludedDisplay = data.excluded ? data.excluded.split('|').join(', ') : '(None)';
+        document.getElementById('excluded-display').textContent = excludedDisplay;
+    })
     .catch(error => console.error('Error setting difficulty:', error));
 }
 
