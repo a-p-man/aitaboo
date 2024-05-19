@@ -24,6 +24,7 @@ function fetchTargetWord() {
     .then(response => response.json())
     .then(data => {
         document.getElementById('word-display').textContent = data.word;
+        document.getElementById('excluded-display').textContent = data.excluded;
     })
     .catch(error => console.error('Error fetching target word:', error));
 }

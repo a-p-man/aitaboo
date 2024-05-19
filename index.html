@@ -16,8 +16,11 @@
         <div class="button-container">
             <div class="target-word" id="target-word">Target word: <span id="word-display">garage</span></div>
         </div>
+        <div class="button-container">
+            <div class="target-word" id="target-word">Excluded words: <span id="excluded-display">garage</span></div>
+        </div>
         <div class="input-group">
-            <textarea type="text" class="input-box" id="input-box" placeholder="Type a phrase that does not include the target word" onkeypress="handleKeyPress(event)"></textarea>
+            <textarea type="text" class="input-box" id="input-box" placeholder="Type a phrase that does not include the target word or any of the excluded words" onkeypress="handleKeyPress(event)"></textarea>
         </div>   
         <div class="button-container">
             <button class="skip-button" id="skip-button">Skip</button>
