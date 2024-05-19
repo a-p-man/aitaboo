@@ -54,7 +54,7 @@ function fetchTargetWord() {
     .then(response => response.json())
     .then(data => {
         document.getElementById('word-display').textContent = data.word;
-        const excludedDisplay = data.excluded.split('|').join(', ');
+        const excludedDisplay = data.excluded ? data.excluded.split('|').join(', ') : '(None)';
         document.getElementById('excluded-display').textContent = excludedDisplay;
     })
     .catch(error => console.error('Error fetching target word:', error));
@@ -123,7 +123,7 @@ function skipWord() {
         messageContainer.textContent = data.prevword + ': ' + prevPhraseClean;
         messageContainer.className = 'message-wrong';
         document.getElementById('word-display').textContent = data.word;
-        const excludedDisplay = data.excluded.split('|').join(', ');
+        const excludedDisplay = data.excluded ? data.excluded.split('|').join(', ') : '(None)';
         document.getElementById('excluded-display').textContent = excludedDisplay;
     })
     .catch(error => console.error('Error fetching phrase: ', error));
