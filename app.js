@@ -17,7 +17,7 @@ document.addEventListener('DOMContentLoaded', function() {
     
     const defaultDifficulty = 'normal'; // Set the default difficulty
     document.getElementById(defaultDifficulty).classList.add('selected');
-    updateDifficulty(this.id);
+    updateDifficulty('normal');
 });
 
 document.querySelectorAll('.difficulty-button').forEach(button => {
